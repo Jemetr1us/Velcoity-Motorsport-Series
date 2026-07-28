@@ -392,6 +392,46 @@ body.admin-active .news-card-del{display:inline-flex;}
 .shc-blue .shc-icon{background:rgba(34,211,238,.15);}
 .shc-green .shc-icon{background:rgba(34,197,94,.15);}
 
+/* LINEUPS PAGE — driver/team grid cards (F1.com-style) + tabs */
+.lineup-tabs{display:flex;gap:8px;margin-bottom:20px;}
+.lineup-tab{height:34px;padding:0 20px;border-radius:8px;border:1px solid var(--border2);background:transparent;color:var(--text2);font-size:12px;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;transition:all .15s;}
+.lineup-tab:hover:not(.active){background:var(--surface);color:#fff;}
+.lineup-tab.active{background:var(--vnfs-grad);color:#fff;border-color:transparent;}
+.lineup-admin-bar{display:flex;gap:8px;margin-bottom:16px;}
+.lineup-grid{display:flex;flex-direction:column;gap:14px;}
+.lineup-class-label{font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--text3);margin:22px 0 12px;}
+.lineup-team-row{width:100%;padding:14px 0;border-bottom:1px solid var(--border);}
+.lineup-team-row:last-child{border-bottom:none;}
+.lineup-team-row-head{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.lineup-team-row-dot{width:12px;height:12px;border-radius:4px;flex-shrink:0;}
+.lineup-team-row-name{font-size:14px;font-weight:800;color:#fff;}
+.lineup-team-row-cards{display:flex;flex-wrap:wrap;gap:12px;}
+.lineup-team-row-cards .driver-card{flex:1 1 210px;max-width:240px;}
+
+.driver-card{position:relative;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 16px;padding-left:20px;overflow:hidden;cursor:pointer;transition:border-color .2s,transform .2s,background .2s;}
+.driver-card:hover{border-color:var(--border2);background:var(--surface2);transform:translateY(-2px);}
+.driver-card-bar{position:absolute;top:0;left:0;width:4px;height:100%;}
+.driver-card-num{font-family:'Anton',sans-serif;font-size:2.1rem;color:rgba(255,255,255,.1);position:absolute;top:8px;right:14px;line-height:1;}
+.driver-card-code{font-family:'Anton',sans-serif;font-size:11px;letter-spacing:.06em;color:var(--text3);margin-bottom:8px;}
+.driver-card-name{font-size:15px;font-weight:800;color:#fff;line-height:1.25;}
+.driver-card-team{font-size:11px;color:var(--text2);margin-top:5px;}
+.driver-card-stats{display:flex;gap:12px;margin-top:12px;}
+.driver-card-stat{font-size:10.5px;color:var(--text3);}
+.driver-card-stat b{color:#fff;font-weight:700;}
+.driver-card-del{position:absolute;top:8px;right:8px;background:none;border:none;color:var(--text3);cursor:pointer;font-size:12px;padding:4px;line-height:1;}
+.driver-card-del:hover{color:var(--red);}
+
+.team-card{position:relative;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 18px 16px;cursor:pointer;transition:border-color .2s,transform .2s,background .2s;}
+.team-card:hover{border-color:var(--border2);background:var(--surface2);transform:translateY(-2px);}
+.team-card-dot{width:14px;height:14px;border-radius:4px;margin-bottom:12px;}
+.team-card-name{font-size:15px;font-weight:800;color:#fff;line-height:1.25;}
+.team-card-sub{font-size:10.5px;color:var(--text2);margin-top:5px;line-height:1.5;}
+.team-card-count{font-size:10.5px;color:var(--text3);margin-top:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;}
+.team-card-actions{position:absolute;top:10px;right:10px;display:flex;gap:4px;}
+.team-card-actions button{background:none;border:none;color:var(--text3);cursor:pointer;font-size:12px;padding:4px;line-height:1;}
+.team-card-actions button:hover{color:#fff;}
+.team-card-adddriver{display:block;margin-top:10px;font-size:10px;}
+
 /* ENDURANCE SUB-CLASS CARDS */
 .end-classes{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:0 32px 28px;}
 .ec{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px;transition:border-color .15s;}
@@ -714,9 +754,6 @@ body.admin-active .dr-drag{display:block;}
 @media (max-width:640px){#searchOverlay{padding:8vh 10px 0;}}
 
 /* ADMIN */
-#adminShield{position:fixed;bottom:16px;right:16px;width:40px;height:40px;background:var(--surface);border:1px solid var(--border);border-radius:10px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:999999998;transition:.15s;}
-#adminShield:hover{border-color:var(--border2);}
-#adminShield svg{width:16px;height:16px;stroke:var(--text3);fill:none;stroke-width:1.8;}
 #adminLogin{position:fixed;inset:0;background:rgba(0,0,0,.8);backdrop-filter:blur(10px);display:none;align-items:center;justify-content:center;z-index:999999999;}
 #adminLogin.open{display:flex;}
 #adminLoginBox{width:320px;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;color:white;text-align:center;}
@@ -2134,9 +2171,6 @@ body.admin-active .editable-hint{display:block;}
 </div>
 
 <!-- ADMIN -->
-<div id="adminShield" onclick="document.getElementById('adminLogin').classList.add('open')">
-  <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-</div>
 <div id="adminLogin">
   <div id="adminLoginBox">
     <h2>VMS Admin</h2>
@@ -3073,18 +3107,13 @@ const INFO_DATA = {
         {num:'12', code:'MD1', name:'Ageftyg2', pts:0, wins:0, pods:0},
         {num:'89', code:'MD2', name:'Gabi', pts:0, wins:0, pods:0},
       ]},
-      {name:'Monster Cadillac F1 Team', engine:'CEO: Bomba · Director: Rúhān | Former CEO', color:'#22c55e', drivers:[
-        {num:'—',  code:'MD1', name:'', pts:0, wins:0, pods:0},
-        {num:'79',  code:'MD2', name:'Daih', pts:0, wins:0, pods:0},
-        {num:'888', code:'RD1', name:'Oliveira', pts:0, wins:0, pods:0},
-      ]},
       {name:'Richard Mille LM Motorsport F1', engine:'CEO: Mikos | LM CEO · Director: Lowie | LM Director', color:'#a78bfa', drivers:[
         {num:'01',  code:'MD1', name:'Lory', pts:0, wins:0, pods:0},
         {num:'999', code:'MD2', name:'Douzy', pts:0, wins:0, pods:0},
       ]},
-      {name:'Red Bull Racing', engine:'', color:'#1e3a8a', drivers:[
-        {num:'63', code:'MD1', name:'Lightening', pts:0, wins:0, pods:0},
-        {num:'—',  code:'MD2', name:'Lando_Norris (@lpgame04)', pts:0, wins:0, pods:0},
+      {name:'Monster Cadillac F1 Team', engine:'CEO: Bomba · Director: Rúhān | Former CEO', color:'#22c55e', drivers:[
+        {num:'79',  code:'MD2', name:'Daih', pts:0, wins:0, pods:0},
+        {num:'888', code:'RD1', name:'Oliveira', pts:0, wins:0, pods:0},
       ]},
       {name:'Cassien Motorsport', engine:'CEO: Zak | Cassien CEO · Director: Parabellum (@Ultimat8X)', color:'#22c55e', drivers:[
         {num:'5',  code:'MD1', name:'Milan', pts:0, wins:0, pods:0},
@@ -4831,84 +4860,138 @@ function whatifReset(){
   whatifRecalc();
 }
 
-/* ═══ INFO PAGE (teams & drivers) ═══ */
+/* ═══ INFO PAGE (teams & drivers) — F1.com-style grid cards, own data ═══ */
+let _lineupTab = {f1:'drivers', f2:'drivers', f3:'drivers', end:'drivers'};
+
+function setLineupTab(series, tab){
+  _lineupTab[series] = tab;
+  renderInfoPage(series);
+}
+
 function renderInfoPage(series){
   const data = INFO_DATA[series];
   const contentEl = document.getElementById(series+'-info-content');
   const subEl = document.getElementById(series+'-info-sub');
-  if(!contentEl) return;
+  if(!contentEl || !data) return;
+
   const totalDrivers = data.teams.reduce((s,t)=>s+t.drivers.length,0);
   if(subEl) subEl.textContent = `${totalDrivers} Driver${totalDrivers!==1?'s':''} · ${data.teams.length} Team${data.teams.length!==1?'s':''}`;
 
-  const addBar = editMode ? `
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
-      <div class="section-label" style="margin:0">Teams &amp; Drivers</div>
-      <div style="display:flex;gap:8px;">
-        <button class="st-edit-btn" data-action="add-team" data-series="${series}">+ Add Team</button>
-        <button class="st-edit-btn" data-action="add-driver" data-series="${series}" data-ti="null">+ Add Driver</button>
-      </div>
-    </div>` : `<div class="section-label" style="margin-bottom:16px;">Teams &amp; Drivers</div>`;
+  const tab = _lineupTab[series] || 'drivers';
+
+  const tabsHtml = `
+    <div class="lineup-tabs">
+      <button class="lineup-tab${tab==='drivers'?' active':''}" onclick="setLineupTab('${series}','drivers')">Drivers</button>
+      <button class="lineup-tab${tab==='teams'?' active':''}" onclick="setLineupTab('${series}','teams')">Teams</button>
+    </div>`;
+
+  const adminBarHtml = editMode ? `
+    <div class="lineup-admin-bar">
+      <button class="st-edit-btn" data-action="add-team" data-series="${series}">+ Add Team</button>
+      <button class="st-edit-btn" data-action="add-driver" data-series="${series}" data-ti="null">+ Add Driver</button>
+    </div>` : '';
 
   if(data.teams.length===0){
-    contentEl.innerHTML = addBar + `<div style="padding:32px;text-align:center;color:var(--text3);font-size:13px;">${editMode?'No teams yet — click "+ Add Team" to get started.':'No teams have been added yet.'}</div>`;
+    contentEl.innerHTML = tabsHtml + adminBarHtml + `<div style="padding:32px;text-align:center;color:var(--text3);font-size:13px;">${editMode?'No teams yet — click "+ Add Team" to get started.':'No teams have been added yet.'}</div>`;
     attachInfoHandlers(contentEl, series);
     return;
   }
 
-  const renderTeamBlock = (team, ti)=>{
-    const editTeamBtn = editMode ? `
-      <button class="st-edit-btn" data-action="edit-team" data-series="${series}" data-ti="${ti}" style="margin-left:auto;margin-right:6px;">✏️ Edit</button>
-      <button class="st-del-btn" data-action="del-team" data-series="${series}" data-ti="${ti}">🗑</button>` : '';
-    const addDriverBtn = editMode ? `
-      <button class="st-edit-btn" data-action="add-driver" data-series="${series}" data-ti="${ti}" style="font-size:10px;padding:0 10px;margin-left:6px;">+ Driver</button>` : '';
+  // ── DRIVERS GRID (grouped one row per team) ──
+  // Live season stats (pts/wins/pods) come from STANDINGS_DATA, which is kept up to
+  // date from actual race results — that's the single source of truth. The lineup
+  // cards used to show their own hardcoded pts/wins/pods (always 0); instead we look
+  // the driver up by name in the matching series' standings each time we render.
+  const getLiveDriverStats = (seriesKey, driverName)=>{
+    const board = STANDINGS_DATA[seriesKey] && STANDINGS_DATA[seriesKey].drivers;
+    if(!board) return null;
+    const norm = s => (s||'').trim().toLowerCase();
+    const hit = board.find(sd => norm(sd.name) === norm(driverName));
+    return hit ? {pts:hit.pts||0, wins:hit.wins||0, pods:hit.pods||0} : null;
+  };
 
-    const driverRows = team.drivers.map((d, di)=>{
-      const delBtn = editMode ? `<button class="st-del-btn" data-action="del-driver" data-series="${series}" data-ti="${ti}" data-di="${di}" style="height:22px;padding:0 10px;font-size:10px;">🗑 Remove</button>` : '';
-      return `<div class="driver-row clickable" draggable="${editMode}" data-series="${series}" data-ti="${ti}" data-di="${di}" data-driver-name="${d.name}" data-driver-series="${series}">
-        <div class="dr-drag" title="Drag to reorder">⠿</div>
-        <div class="dr-num">${d.num}</div>
-        <div class="dr-code">${d.code}</div>
-        <div class="dr-name">${d.name}</div>
-        <div class="dr-stat">${d.pts||0}</div>
-        <div class="dr-stat">${d.wins||0}</div>
-        <div class="dr-stat">${d.pods||0}</div>
-        <div>${delBtn}</div>
-      </div>`;
-    }).join('');
-
-    const emptyRow = team.drivers.length===0 ? `<div style="padding:16px 20px;color:var(--text3);font-size:12px;">No drivers assigned yet.</div>` : '';
-
-    return `<div class="team-block">
-      <div class="team-header" style="cursor:pointer;" onclick="(function(e){if(e.target.closest('button'))return;openTeamProfile('${team.name.replace(/'/g,"\\'")}','${series}');})(event)">
-        <div class="team-color-dot" style="background:${team.color};"></div>
-        <div><div class="team-name">${team.name}</div>${team.engine?`<div style="font-size:10px;color:var(--text3);margin-top:2px;">${team.engine}</div>`:''}</div>
-        <div class="team-count">${team.drivers.length} driver${team.drivers.length!==1?'s':''}</div>
-        ${editTeamBtn}${addDriverBtn}
+  const renderDriverCard = (d, team, ti, di)=>{
+    const delBtn = editMode ? `<button class="driver-card-del" data-action="del-driver" data-series="${series}" data-ti="${ti}" data-di="${di}" title="Remove driver">🗑</button>` : '';
+    const live = getLiveDriverStats(series, d.name);
+    const stats = live || {pts:d.pts||0, wins:d.wins||0, pods:d.pods||0};
+    return `<div class="driver-card clickable" data-driver-name="${d.name}" data-driver-series="${series}">
+      <div class="driver-card-bar" style="background:${team.color};"></div>
+      <div class="driver-card-num">${d.num||''}</div>
+      ${delBtn}
+      <div class="driver-card-code">${d.code||''}</div>
+      <div class="driver-card-name">${d.name}</div>
+      <div class="driver-card-team">${team.name}</div>
+      <div class="driver-card-stats">
+        <div class="driver-card-stat"><b>${stats.pts}</b> PTS</div>
+        <div class="driver-card-stat"><b>${stats.wins}</b> WINS</div>
+        <div class="driver-card-stat"><b>${stats.pods}</b> PODS</div>
       </div>
-      ${team.drivers.length? `<div class="driver-row-head">
-        <div class="drh"></div><div class="drh">#</div><div class="drh">CODE</div><div class="drh">DRIVER</div>
-        <div class="drh right">PTS</div><div class="drh right">WINS</div><div class="drh right">PODS</div>
-        <div class="drh"></div>
-      </div>` : ''}
-      ${driverRows}${emptyRow}
     </div>`;
   };
 
-  let blocks;
+  const renderTeamDriverRow = (team, ti)=>{
+    const cards = team.drivers.length
+      ? team.drivers.map((d,di)=>renderDriverCard(d, team, ti, di)).join('')
+      : `<div style="padding:14px 4px;color:var(--text3);font-size:12px;">No drivers assigned yet.</div>`;
+    return `<div class="lineup-team-row">
+      <div class="lineup-team-row-head">
+        <div class="lineup-team-row-dot" style="background:${team.color};"></div>
+        <div class="lineup-team-row-name">${team.name}</div>
+      </div>
+      <div class="lineup-team-row-cards">${cards}</div>
+    </div>`;
+  };
+
+  let driversGrid;
+  if(series==='end'){
+    const classLabels = {gt3:'LMGT3', lmp2:'LMP2', lmh:'LMDH'};
+    const order = ['gt3','lmp2','lmh'];
+    driversGrid = order.map(cls=>{
+      const teamsInClass = data.teams.map((t,ti)=>({t,ti})).filter(x=>(x.t.cls||'gt3')===cls);
+      if(!teamsInClass.length) return '';
+      const rows = teamsInClass.map(x=>renderTeamDriverRow(x.t, x.ti)).join('');
+      return `<div class="lineup-class-label">${classLabels[cls]}</div>${rows}`;
+    }).join('');
+  } else {
+    driversGrid = data.teams.map((team,ti)=>renderTeamDriverRow(team, ti)).join('');
+  }
+  if(!driversGrid) driversGrid = `<div style="padding:32px;text-align:center;color:var(--text3);font-size:13px;">No drivers have been added yet.</div>`;
+
+  // ── TEAMS GRID ──
+  const renderTeamCard = (team, ti)=>{
+    const actions = editMode ? `<div class="team-card-actions">
+        <button data-action="edit-team" data-series="${series}" data-ti="${ti}" title="Edit team">✏️</button>
+        <button data-action="del-team" data-series="${series}" data-ti="${ti}" title="Delete team">🗑</button>
+      </div>` : '';
+    const addDriverLink = editMode ? `<button class="st-edit-btn team-card-adddriver" data-action="add-driver" data-series="${series}" data-ti="${ti}">+ Add Driver</button>` : '';
+    return `<div class="team-card clickable" data-team-name="${team.name}" data-team-series="${series}">
+      ${actions}
+      <div class="team-card-dot" style="background:${team.color};"></div>
+      <div class="team-card-name">${team.name}</div>
+      ${team.engine?`<div class="team-card-sub">${team.engine}</div>`:''}
+      <div class="team-card-count">${team.drivers.length} Driver${team.drivers.length!==1?'s':''}</div>
+      ${addDriverLink}
+    </div>`;
+  };
+
+  let teamsGrid;
   if(series==='end'){
     const classLabels = {gt3:'LMGT3 TEAMS', lmp2:'LMP2 TEAMS', lmh:'LMDH TEAMS'};
     const order = ['gt3','lmp2','lmh'];
-    blocks = order.map(cls=>{
+    teamsGrid = order.map(cls=>{
       const teamsInClass = data.teams.map((t,ti)=>({t,ti})).filter(x=>(x.t.cls||'gt3')===cls);
       if(!teamsInClass.length) return '';
-      return `<div class="section-label" style="margin:24px 0 12px;">${classLabels[cls]}</div>` +
-        teamsInClass.map(x=>renderTeamBlock(x.t, x.ti)).join('');
+      return `<div class="lineup-class-label">${classLabels[cls]}</div>` + teamsInClass.map(x=>renderTeamCard(x.t,x.ti)).join('');
     }).join('');
   } else {
-    blocks = data.teams.map((team, ti)=>renderTeamBlock(team, ti)).join('');
+    teamsGrid = data.teams.map((team,ti)=>renderTeamCard(team,ti)).join('');
   }
 
-  contentEl.innerHTML = addBar + blocks;
+  contentEl.innerHTML = `
+    ${tabsHtml}${adminBarHtml}
+    <div class="lineup-grid" id="${series}-info-drivers-grid" style="${tab==='drivers'?'':'display:none;'}">${driversGrid}</div>
+    <div class="lineup-grid" id="${series}-info-teams-grid" style="${tab==='teams'?'':'display:none;'}">${teamsGrid}</div>
+  `;
   attachInfoHandlers(contentEl, series);
 }
 
@@ -4928,67 +5011,19 @@ function attachInfoHandlers(container, series){
     });
   });
 
-  // Clickable driver rows → profile modal
-  container.querySelectorAll('.driver-row.clickable').forEach(row=>{
-    row.addEventListener('click', function(e){
+  // Clickable driver cards → profile modal
+  container.querySelectorAll('.driver-card.clickable').forEach(card=>{
+    card.addEventListener('click', function(e){
       if(e.target.closest('[data-action]') || e.target.closest('button')) return;
       openDriverProfile(this.dataset.driverName, this.dataset.driverSeries);
     });
   });
 
-  if(!editMode) return;
-
-  // Drag-and-drop reorder for driver rows
-  let dragSrc = null;
-
-  container.querySelectorAll('.driver-row[draggable="true"]').forEach(row=>{
-    row.addEventListener('dragstart', e=>{
-      dragSrc = row;
-      row.classList.add('dragging');
-      e.dataTransfer.effectAllowed = 'move';
-    });
-    row.addEventListener('dragend', ()=>{
-      row.classList.remove('dragging','drag-over-top','drag-over-bot');
-      container.querySelectorAll('.driver-row').forEach(r=>r.classList.remove('drag-over-top','drag-over-bot'));
-      dragSrc = null;
-    });
-    row.addEventListener('dragover', e=>{
-      if(!dragSrc || dragSrc===row) return;
-      e.preventDefault();
-      e.dataTransfer.dropEffect = 'move';
-      const rect = row.getBoundingClientRect();
-      const mid = rect.top + rect.height/2;
-      container.querySelectorAll('.driver-row').forEach(r=>r.classList.remove('drag-over-top','drag-over-bot'));
-      row.classList.add(e.clientY < mid ? 'drag-over-top' : 'drag-over-bot');
-    });
-    row.addEventListener('dragleave', ()=>{
-      row.classList.remove('drag-over-top','drag-over-bot');
-    });
-    row.addEventListener('drop', e=>{
-      e.preventDefault();
-      if(!dragSrc || dragSrc===row) return;
-      row.classList.remove('drag-over-top','drag-over-bot');
-
-      const fromTi = parseInt(dragSrc.dataset.ti);
-      const fromDi = parseInt(dragSrc.dataset.di);
-      const toTi   = parseInt(row.dataset.ti);
-      const toDi   = parseInt(row.dataset.di);
-      const s      = dragSrc.dataset.series;
-      if(fromTi !== toTi) return; // only reorder within same team
-
-      const drivers = INFO_DATA[s].teams[fromTi].drivers;
-      const rect = row.getBoundingClientRect();
-      const mid = rect.top + rect.height/2;
-      const insertBefore = e.clientY < mid;
-
-      const [moved] = drivers.splice(fromDi, 1);
-      let insertIdx = toDi;
-      if(!insertBefore && insertIdx >= fromDi) insertIdx++;
-      if(insertBefore  && insertIdx > fromDi)  insertIdx--;
-      // clamp
-      insertIdx = Math.max(0, Math.min(drivers.length, insertIdx));
-      drivers.splice(insertIdx, 0, moved);
-      renderInfoPage(s);
+  // Clickable team cards → profile modal
+  container.querySelectorAll('.team-card.clickable').forEach(card=>{
+    card.addEventListener('click', function(e){
+      if(e.target.closest('[data-action]') || e.target.closest('button')) return;
+      openTeamProfile(this.dataset.teamName, this.dataset.teamSeries);
     });
   });
 }
