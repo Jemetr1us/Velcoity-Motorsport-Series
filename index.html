@@ -398,7 +398,6 @@ body.admin-active .news-card-del{display:inline-flex;}
 .sc-f3 .sc-topbar{background:#22d3ee;}
 .sc-f4 .sc-topbar{background:#a78bfa;}
 .sc-end .sc-topbar{background:linear-gradient(90deg,#22c55e,#16a34a);}
-.sc-tier{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:12px;}
 .sc-f1 .sc-tier{color:var(--red);}
 .sc-f2 .sc-tier{color:#6699ff;}
 .sc-f3 .sc-tier{color:#22d3ee;}
@@ -3100,7 +3099,7 @@ const SESSION_TIMES = {
   end: {day:'Friday',   time:'2:00 PM EST'},
 };
 const RESULTS = {
-  '0-f1': [
+  '01-f1': [
     {pos:1,  name:'Michael',    team:'Mercedes-AMG',                   pts:26, fl:false, pole:false, note:'Retired from championship — pts count for WCC only'},
     {pos:1,  name:'Nick',       team:'Scuderia Ferrari',               pts:26, fl:false, pole:true,  note:'50% rule Art. B.4.2'},
     {pos:2,  name:'Douzy',      team:'Richard Mille LM Motorsport F1', pts:20, fl:true,  pole:false, note:''},
@@ -3119,8 +3118,7 @@ const RESULTS = {
     {pos:15, name:'Zemmer',     team:'Renault Sport Formula 1 Team',            pts:1,  fl:false, pole:false, note:'DNF'},
     {pos:16, name:'Elijah',     team:'Hertz Porsche',                  pts:1,  fl:false, pole:false, note:'DNS'},
   ],
-  '0-f1-quali': ['Nick','Lory','Douzy','theo','Ageftyg2','Joshua','Dovantae','Nath','Vitality','Zemmer','Elijah','Michael','Juan','Lewis','Alex','Lightening'],
-  '2-f1': [
+  '02-f1': [
     {pos:1, name:'Nick',     team:'Scuderia Ferrari',               pts:25, fl:false, pole:false, note:''},
     {pos:2, name:'Douzy',    team:'Richard Mille LM Motorsport F1', pts:19, fl:true,  pole:false, note:''},
     {pos:3, name:'Lory',     team:'Richard Mille LM Motorsport F1', pts:15, fl:false, pole:false, note:''},
@@ -3135,29 +3133,7 @@ const RESULTS = {
     {pos:12,name:'Vitality',          team:'Scuderia Ferrari',           pts:0, fl:false, pole:false, note:'DNF'},
     {pos:13,name:'Lewis',             team:'Sahara Force India F1 Team',         pts:0, fl:false, pole:false, note:'DNF'},
   ],
-  '2-f2': [
-    {pos:1, name:'Gamrin',   team:'LM Performance F2', pts:23, fl:false, pole:true,  note:''},
-    {pos:2, name:'Skirmis',  team:'LM Performance F2', pts:18, fl:false, pole:false, note:''},
-    {pos:3, name:'Style',    team:'Renault Sport Formula 1 Team',              pts:16, fl:false, pole:false, note:''},
-    {pos:4, name:'Crocs',    team:'Acura Team Penske',                pts:14, fl:false, pole:false, note:''},
-    {pos:5, name:'Igorexe',  team:'Acura Team Penske',                pts:12, fl:false, pole:false, note:''},
-    {pos:6, name:'Gasly',    team:'AF Corsa',                         pts:10, fl:false, pole:false, note:''},
-    {pos:7, name:'Nahim',    team:'Renault Sport Formula 1 Team',              pts:8,  fl:false, pole:false, note:''},
-    {pos:8, name:'Batman',   team:'Night Reapers X',                  pts:0,  fl:false, pole:false, note:'DNF'},
-    {pos:9,name:'Alistair', team:'Campos Racing F2',               pts:0,  fl:false, pole:false, note:'DNF'},
-  ],
-  '2-f3': [
-    {pos:1, name:'PradX',      team:'LMP',                            pts:21, fl:false, pole:true,  note:''},
-    {pos:2, name:'Ukizi',      team:'LMP',                            pts:18, fl:false, pole:false, note:''},
-    {pos:3, name:'Piko',       team:'LMP',                            pts:16, fl:false, pole:false, note:''},
-    {pos:4, name:'Peters',     team:"Tarigy's Motorsport Team",       pts:14, fl:false, pole:false, note:''},
-    {pos:5, name:'Bartos',     team:'Aero Apex Racing F3',            pts:14, fl:true,  pole:false, note:''},
-    {pos:6, name:'YellowR1ce', team:'Renault Sport Formula 1 Team F3',         pts:10, fl:false, pole:false, note:''},
-    {pos:7, name:'Swixks',     team:'Carti Racing Association F3',    pts:8,  fl:false, pole:false, note:''},
-    {pos:8, name:'Fabián',     team:'Renault Sport Formula 1 Team F3',         pts:6,  fl:false, pole:false, note:''},
-    {pos:9, name:'Chonki',     team:'Renault Sport Formula 1 Team F3',         pts:4,  fl:false, pole:false, note:''},
-  ],
-  '4-f1': [
+  '03-f1': [
     {pos:1, name:'Douzy',              team:'Richard Mille LM Motorsport F1', pts:25, fl:false, pole:false, note:''},
     {pos:2, name:'Lory',               team:'Richard Mille LM Motorsport F1', pts:18, fl:false, pole:false, note:''},
     {pos:3, name:'Jamie',              team:'Renault Sport Formula 1 Team',            pts:16, fl:true,  pole:false, note:'New Renault Sport Formula 1 Team MD1 (TBC)'},
@@ -3165,48 +3141,7 @@ const RESULTS = {
     {pos:5, name:'Dovantae',           team:'Aero Apex Racing',               pts:10, fl:false, pole:false, note:''},
     {pos:6, name:'yktomms the sequel', team:'Aero Apex Racing',               pts:8,  fl:false, pole:false, note:''},
   ],
-  '6-f2': [
-    {pos:1, name:'Gamrin',   team:'LM Performance F2',   pts:22, fl:false, pole:true,  gap:'', note:''},
-    {pos:2, name:'Skirmis',  team:'LM Performance F2',   pts:19, fl:false, pole:false, gap:'', note:''},
-    {pos:3, name:'neon',     team:'Renault Sport Formula 1 Team', pts:16, fl:false, pole:false, gap:'', note:''},
-    {pos:4, name:'Jandosak', team:'Carti Racing Association', pts:14, fl:false, pole:false, gap:'', note:''},
-    {pos:5, name:'Ash',      team:'Aero Apex Racing F2', pts:12, fl:false, pole:false, gap:'', note:''},
-    {pos:6, name:'ZAYN',     team:'AF Corsa',            pts:10, fl:false, pole:false, gap:'', note:''},
-    {pos:7, name:'Nahim',    team:'Renault Sport Formula 1 Team', pts:0,  fl:false, pole:false, gap:'', note:''},
-    {pos:8, name:'Alistair', team:'Campos Racing F2',  pts:0,  fl:false, pole:false, gap:'', note:''},
-    {pos:9, name:'Batman',   team:'Night Reapers X',     pts:0,  fl:false, pole:false, gap:'', note:''},
-  ],
-  '4-f3': [
-    {pos:1, name:'Piko',    team:'LMP',                            pts:20, fl:false, pole:false, note:''},
-    {pos:2, name:'DOA',     team:"Tarigy's Motorsport Team",       pts:18, fl:false, pole:false, note:''},
-    {pos:3, name:'Fabián',  team:'Renault Sport Formula 1 Team F3',         pts:16, fl:false, pole:false, note:''},
-    {pos:4, name:'Peters',  team:"Tarigy's Motorsport Team",       pts:15, fl:true,  pole:false, note:''},
-    {pos:5, name:'PradX',   team:'LMP',                            pts:12, fl:false, pole:false, note:''},
-    {pos:6, name:'Chonki',  team:'Renault Sport Formula 1 Team F3',         pts:10, fl:false, pole:false, note:''},
-    {pos:7, name:'Ukizi',   team:'LMP',                            pts:8,  fl:false, pole:false, note:'LMP driver'},
-  ],
-  '4-f2': [
-    {pos:1, name:'Skirmis',  team:'LM Performance F2',  pts:20, fl:false, pole:true,  note:'Leader'},
-    {pos:2, name:'Gamrin',   team:'LM Performance F2',  pts:18, fl:false, pole:false, note:''},
-    {pos:3, name:'Neon',     team:'Renault Sport Formula 1 Team',pts:16, fl:false, pole:false, note:''},
-    {pos:4, name:'Batman',   team:'Night Reapers X',   pts:15, fl:true,  pole:false, note:'Fastest Lap'},
-    {pos:5, name:'Crocs',    team:'Acura Team Penske', pts:12, fl:false, pole:false, note:''},
-  ],
-  '5-end-hyper': [
-    {pos:1, name:'Cadillac', team:'Cadillac', pts:20, fl:false, pole:false, note:''},
-    {pos:2, name:'Alpine',   team:'Alpine',   pts:17, fl:false, pole:false, note:''},
-  ],
-  '5-end-lmp2': [
-    {pos:1, name:'Richard Mille LM Performance', team:'Richard Mille LM Performance', pts:20, fl:false, pole:false, note:''},
-    {pos:2, name:'McLaren LMP2',                 team:'McLaren LMP2',                 pts:17, fl:false, pole:false, note:''},
-    {pos:3, name:'Aero Apex Racing',             team:'Aero Apex Racing',             pts:15, fl:false, pole:false, note:''},
-  ],
-  '5-end-gt3': [
-    {pos:1, name:'Ford',   team:'Ford',   pts:20, fl:false, pole:false, note:''},
-    {pos:2, name:'Pacific Umamusume BMW', team:'Pacific Umamusume BMW', pts:17, fl:false, pole:false, note:''},
-    {pos:3, name:'Nissan', team:'Nissan', pts:15, fl:false, pole:false, note:''},
-  ],
-  '6-f1': [
+  '04-f1': [
     {pos:1,  name:'Jamie',              team:'Renault Sport Formula 1 Team',            pts:26, fl:false, pole:false, note:''},
     {pos:2,  name:'Douzy',              team:'Richard Mille LM Motorsport F1', pts:18, fl:false, pole:false, note:''},
     {pos:3,  name:'Lory',               team:'Richard Mille LM Motorsport F1', pts:15, fl:false, pole:false, note:''},
@@ -3219,76 +3154,64 @@ const RESULTS = {
     {pos:10, name:'Gabi',               team:'Vodafone McLaren',                        pts:1,  fl:false, pole:false, note:''},
     {pos:11, name:'yktomms the sequel', team:'Aero Apex Racing',               pts:0,  fl:false, pole:false, note:''},
   ],
-  '10-f2': [
-    {pos:1, name:'Gamrin',       team:'Renault Sport Formula 2 Team', pts:25, fl:false, pole:false, note:'10s Pen'},
-    {pos:2, name:'Crocs',        team:'Carti Racing Association',     pts:20, fl:true,  pole:false, note:'+1.616'},
-    {pos:3, name:'Peters',       team:'LM Performance F2',            pts:15, fl:false, pole:false, note:'+16.265'},
-    {pos:4, name:'Maldonado',    team:"Tarigy's Motorsport Team F2",   pts:12, fl:false, pole:false, note:'5s Pen'},
-    {pos:5, name:'Alien',        team:'Nissan Nissmo',                pts:11, fl:false, pole:false, note:'5s Pen · +1 Lap'},
-    {pos:6, name:'Zaphira',      team:'Nissan Nissmo',                pts:8,  fl:false, pole:false, note:'+1 Lap'},
-    {pos:7, name:'unknown-user', team:'',                             pts:0,  fl:false, pole:false, note:'DNF'},
-    {pos:8, name:'Skirmis',      team:'LM Performance F2',            pts:0,  fl:false, pole:false, note:'DNF'},
-    {pos:9, name:'AObro13',      team:'Carti Racing Association',     pts:0,  fl:false, pole:false, note:'DNS'},
+    '05-f1': [
+    {pos:1,  name:'Nick',              team:'Scuderia Ferrari',            pts:26, fl:true, pole:true, note:''},
+    {pos:2,  name:'Jamie',              team:'Isreal Racing Point', pts:18, fl:false, pole:false, note:''},
+    {pos:3,  name:'Noel',               team:'Mercedes-AMG',                   pts:15, fl:false, pole:false, note:''},
+    {pos:4,  name:'Douzy',               team:'Richard Mille LM Motorsport F1',   pts:12, fl:false, pole:false, note:''},
+    {pos:5,  name:'Noah',           team:'Chonkebee Racing F1',               pts:10, fl:false, pole:false, note:''},
+    {pos:6,  name:'Lory',           team:'Richard Mille LM Motorsport F1',        pts:8,  fl:false, pole:false, note:''},
+    {pos:7,  name:'Tenbreakes',               team:'Aero Apex Racing',             pts:6,  fl:false, pole:false, note:''},
+    {pos:8,  name:'John',            team:'Hertz Porsche',                  pts:4,  fl:false, pole:false, note:''},
+    {pos:8,  name:'Gabi',            team:'Vodafone McLaren',                  pts:2,  fl:false, pole:false, note:''},
+    {pos:10,  name:'Albanana',               team:'Chonkebee Racing F1',       pts:1,  fl:false, pole:false, note:''},
+    {pos:11, name:'SoulX',               team:'Vodafone McLaren',             pts:0,  fl:false, pole:false, note:'DNF'},
+    {pos:12, name:'Milan', team:'Cassien Motorsport',  pts:0,  fl:false, pole:false, note:'DNF'},
+    {pos:13, name:'RMA', team:'Scuderia Ferrari',  pts:0,  fl:false, pole:false, note:'DNF'},
   ],
-  '16-f3': [
-    {pos:1, name:'Jeffz',       team:'LM Performance F3',                    pts:27, fl:true,  pole:false, gap:'Leader',      note:''},
-    {pos:2, name:'Piko',        team:'LM Performance F3',                    pts:19, fl:false, pole:true,  gap:'+0.132',      note:''},
-    {pos:3, name:'Fabián',      team:"Tarigy's Motorsport Team F3",         pts:15, fl:false, pole:false, gap:'+8.115',      note:''},
-    {pos:4, name:'Dark Shadow', team:'Pola Sabre Motorsports',                pts:12, fl:false, pole:false, gap:'+10.994',     note:'6s Penalty'},
-    {pos:5, name:'Piti',        team:'Anonymous Juniors',                    pts:10, fl:false, pole:false, gap:'+12.119',     note:''},
-    {pos:6, name:'ellie',       team:'Kogun Technologies F3 Team',           pts:8,  fl:false, pole:false, gap:'+12.743',     note:'5s Penalty'},
-    {pos:7, name:'Jardin',      team:'LM Performance F3',                    pts:6,  fl:false, pole:false, gap:'+17.265',     note:'11s Penalty'},
-    {pos:8, name:'Bartos',      team:'Pola Sabre Motorsports',                pts:4,  fl:false, pole:false, gap:'+17.750',     note:'10s Penalty'},
-    {pos:9, name:'LJS',         team:'Anonymous Juniors',                    pts:2,  fl:false, pole:false, gap:'+28.280s',    note:''},
-    {pos:10,name:'Jimmy',       team:'Pola Sabre Motorsports',                pts:0,  fl:false, pole:false, gap:'DNF',         note:'DNF'},
-    {pos:11,name:'Maslo',       team:'Aston Martin Racing F3',                pts:0,  fl:false, pole:false, gap:'DNF',         note:'DNF'},
-    {pos:12,name:'Tta',         team:'Aston Martin Racing F3',                pts:0,  fl:false, pole:false, gap:'DNF',         note:'DNF'},
-    {pos:13,name:'Mikey',       team:'Aston Martin Racing F3',                pts:0,  fl:false, pole:false, gap:'DNF',         note:'DNF'},
-    {pos:14,name:'Fred',        team:'GlitchGP F3',                           pts:0,  fl:false, pole:false, gap:'DNF',         note:'DNF'},
-    {pos:15,name:'SilentZ',     team:'',                                      pts:0,  fl:false, pole:false, gap:'DNS',         note:'DNS'},
-    {pos:16,name:'Halo',        team:'Anonymous Juniors',                    pts:0,  fl:false, pole:false, gap:'DNS',         note:'DNS'},
+      '06-f1': [
+    {pos:1,  name:'Noel',              team:'Mercedes-AMG',            pts:25, fl:false, pole:false, note:''},
+    {pos:1,  name:'Nick',              team:'Scuderia Ferrari', pts:25, fl:false, pole:false, note:'50% Rule'},
+    {pos:2,  name:'Jamie',               team:'Isreal Racing Point',                   pts:18, fl:true, pole:false, note:''},
+    {pos:3,  name:'Joshua',               team:'Isreal Racing Point',   pts:15, fl:false, pole:true, note:''},
+    {pos:4,  name:'Tenbreakes',           team:'Aero Apex Racing',               pts:12, fl:false, pole:false, note:''},
+    {pos:5,  name:'Ageftyg2',           team:'Vodafone McLaren',        pts:10,  fl:false, pole:false, note:''},
+    {pos:6,  name:'Infinity',               team:'Scuderia Ferrari',             pts:8,  fl:false, pole:false, note:''},
+    {pos:7,  name:'Theo',            team:'Monster Energy Performance',                  pts:6,  fl:false, pole:false, note:''},
+    {pos:8,  name:'Douzy',            team:'Richard Mille LM Motorsports F1',                  pts:4,  fl:false, pole:false, note:''},
+    {pos:9,  name:'Lory',               team:'Richard Mille LM Motorsports F1',       pts:0,  fl:false, pole:false, note:'DSQ'},
+    {pos:10, name:'Daih',               team:'Monster Cadillac F1',             pts:0,  fl:false, pole:false, note:'DNF'},
+    {pos:11, name:'Lewis', team:'Cassien Motorsport',  pts:0,  fl:false, pole:false, note:'DNF'},
+    {pos:12, name:'Noah', team:'Chonkebee Racing F1',  pts:0,  fl:false, pole:false, note:'DNF'},
   ],
-  '18-f3': [
-    {pos:1, name:'Piko',        team:'LM Performance F3',                    pts:28, fl:true,  pole:true,  gap:'Leader',      note:''},
-    {pos:2, name:'Ukkiett',     team:'Carti Racing Association F3',          pts:18, fl:false, pole:false, gap:'+7.410',      note:''},
-    {pos:3, name:'Bartos',      team:'Pola Sabre Motorsports',                pts:15, fl:false, pole:false, gap:'+8.333',      note:''},
-    {pos:4, name:'Dark Shadow', team:'Pola Sabre Motorsports',                pts:12, fl:false, pole:false, gap:'+8.483',      note:''},
-    {pos:5, name:'Lancelot',    team:"Tarigy's Motorsport Team F3",         pts:10, fl:false, pole:false, gap:'+14.091',     note:''},
-    {pos:6, name:'Kriekel',     team:'LM Performance F3',                    pts:8,  fl:false, pole:false, gap:'+30.106',     note:''},
-    {pos:7, name:'Fabián',      team:"Tarigy's Motorsport Team F3",         pts:6,  fl:false, pole:false, gap:'+30.508',     note:''},
-    {pos:8, name:'Rice',        team:'Renault Sport Formula 3 Team',         pts:4,  fl:false, pole:false, gap:'+46.782',     note:'5s Pen'},
-    {pos:9, name:'syxe',        team:'GlitchGP F3',                           pts:2,  fl:false, pole:false, gap:'+1 Lap',      note:'5s Pen'},
-    {pos:10,name:'LJS',         team:'Anonymous Juniors',                    pts:1,  fl:false, pole:false, gap:'+1 Lap',      note:''},
-    {pos:11,name:'Jardin',      team:'LM Performance F3',                    pts:0,  fl:false, pole:false, gap:'DNF',         note:'DNF'},
-    {pos:12,name:'Maslo',       team:'Aston Martin Racing F3',                pts:0,  fl:false, pole:false, gap:'DNF',         note:'DNF'},
-    {pos:13,name:'Piti',        team:'Anonymous Juniors',                    pts:0,  fl:false, pole:false, gap:'DNF',         note:'DNF'},
-    {pos:14,name:'El_Manco010', team:"Tarigy's Motorsport Team F3",         pts:0,  fl:false, pole:false, gap:'DNF',         note:'DNF'},
-    {pos:15,name:'Spring',      team:'',                                      pts:0,  fl:false, pole:false, gap:'DNF',         note:'DNF'},
-    {pos:16,name:'Boby',        team:'Fast Line Motorsport F3 Team',          pts:0,  fl:false, pole:false, gap:'DNF',         note:'DNF'},
-    {pos:17,name:'Mikey',       team:'Aston Martin Racing F3',                pts:0,  fl:false, pole:false, gap:'DNF',         note:'DNF'},
-    {pos:18,name:'Elden',       team:'Aero Apex Racing F3',                   pts:0,  fl:false, pole:false, gap:'DNF',         note:'DNF'},
-    {pos:19,name:'FTL',         team:'Renault Sport Formula 3 Team',         pts:0,  fl:false, pole:false, gap:'DSQ',         note:'DSQ'},
-    {pos:20,name:'OSHIO',       team:'',                                      pts:0,  fl:false, pole:false, gap:'DSQ',         note:'DSQ'},
+      '07-f1': [
+    {pos:1,  name:'Nick',              team:'Scuderia Ferrari', pts:26, fl:true, pole:true, note:''},
+    {pos:2,  name:'Jamie',               team:'Isreal Racing Point',                   pts:18, fl:false, pole:false, note:''},
+    {pos:3,  name:'Noel',               team:'Mercedes-AMG',   pts:15, fl:false, pole:false, note:''},
+    {pos:4,  name:'Lory',               team:'Richard Mille LM Motorsports F1',       pts:12,  fl:false, pole:false, note:''},
+    {pos:5, name:'Daih',               team:'Monster Cadillac F1',             pts:10,  fl:false, pole:false, note:''},
+    {pos:6,  name:'Tenbreakes',           team:'Aero Apex Racing',               pts:8, fl:false, pole:false, note:''},
+    {pos:7,  name:'Ageftyg2',           team:'Vodafone McLaren',        pts:0,  fl:false, pole:false, note:'DSQ'},
+    {pos:8,  name:'Joshua',               team:'Isreal Racing Point',             pts:0,  fl:false, pole:false, note:'DSQ'},
+    {pos:9,  name:'Clamzyro',            team:'Chonkebee Racing F1',                  pts:0,  fl:false, pole:false, note:'DSQ'},
+    {pos:10,  name:'Dovantae',            team:'Aero Apex Racing',                  pts:0,  fl:false, pole:false, note:'DNS'},
+    {pos:11, name:'Luddster', team:'Hertz Porsche',  pts:0,  fl:false, pole:false, note:'DNS'},
+    {pos:12, name:'Whapples', team:'Chonkebee Racing F1',  pts:0,  fl:false, pole:false, note:'DNS'},
   ],
-  '20-f3': [
-    {pos:1, name:'Jeffz',       team:'LM Performance F3',                    pts:28, fl:true,  pole:true,  gap:'Leader',      note:''},
-    {pos:2, name:'Bartos',      team:'Pola Sabre Motorsports',                pts:18, fl:false, pole:false, gap:'+7.083',      note:''},
-    {pos:3, name:'Ukkiett',     team:'Carti Racing Association F3',          pts:15, fl:false, pole:false, gap:'+10.516',     note:''},
-    {pos:4, name:'Lancelot',    team:"Tarigy's Motorsport Team F3",         pts:12, fl:false, pole:false, gap:'+10.702',     note:''},
-    {pos:5, name:'Piko',        team:'LM Performance F3',                    pts:10, fl:false, pole:false, gap:'+11.367',     note:''},
-    {pos:6, name:'SCKIBLES',    team:'GlitchGP F3',                           pts:8,  fl:false, pole:false, gap:'+15.400',     note:''},
-    {pos:7, name:'Fabián',      team:"Tarigy's Motorsport Team F3",         pts:6,  fl:false, pole:false, gap:'+20.832',     note:''},
-    {pos:8, name:'Jardin',      team:'LM Performance F3',                    pts:4,  fl:false, pole:false, gap:'+29.048',     note:''},
-    {pos:9, name:'Rice',        team:'Renault Sport Formula 3 Team',         pts:2,  fl:false, pole:false, gap:'+37.632',     note:'10s Pen'},
-    {pos:10,name:'Avdla',       team:'Kogun Technologies F3 Team',           pts:0,  fl:false, pole:false, gap:'DNF',         note:'DNF'},
-    {pos:11,name:'Maslo',       team:'Aston Martin Racing F3',                pts:0,  fl:false, pole:false, gap:'DNF',         note:'DNF'},
-    {pos:12,name:'GASLY',       team:'GlitchGP F3',                           pts:0,  fl:false, pole:false, gap:'DNF',         note:'DNF'},
-    {pos:13,name:'syxe',        team:'GlitchGP F3',                           pts:0,  fl:false, pole:false, gap:'DNF',         note:'DNF'},
-    {pos:14,name:'Mikey',       team:'Aston Martin Racing F3',                pts:0,  fl:false, pole:false, gap:'DNF',         note:'DNF'},
-    {pos:15,name:'Piti',        team:'Anonymous Juniors',                    pts:0,  fl:false, pole:false, gap:'DNF',         note:'DNF'},
-    {pos:16,name:'Elf',         team:'Pola Sabre Motorsports',                pts:0,  fl:false, pole:false, gap:'DNF',         note:'DNF'},
+       '08-f1': [
+    {pos:1,  name:'Nick',              team:'Scuderia Ferrari', pts:26, fl:true, pole:true, note:''},
+    {pos:2,  name:'Douzy',               team:'Richard Mille LM Motorsport F1',   pts:18, fl:false, pole:false, note:''},
+    {pos:3,  name:'Skirmis',               team:'Richard Mille LM Motorsport F1',   pts:15, fl:false, pole:false, note:''},
+    {pos:4, name:'Daih',               team:'Monster Cadillac F1',             pts:12,  fl:false, pole:false, note:''},
+    {pos:5,  name:'Tenbreakes',           team:'Aero Apex Racing',               pts:10, fl:false, pole:false, note:''},
+    {pos:6,  name:'Theo',           team:'Monster Energy Performance',        pts:8,  fl:false, pole:false, note:''},
+    {pos:8,  name:'Lewis',               team:'Cassien Motorsport',             pts:6,  fl:false, pole:false, note:'DSQ'},
+    {pos:9,  name:'Sam',            team:'Cassien Motorsport',                  pts:4,  fl:false, pole:false, note:'DSQ'},
+    {pos:10,  name:'Vitality',            team:'Scuderia Ferrari',                  pts:2,  fl:false, pole:false, note:'DNS'},
+    {pos:11, name:'Alpha', team:'Mercedes-AMG',  pts:0,  fl:false, pole:false, note:'Mechanical Failure'},
+    {pos:12, name:'Chester', team:'Aero Apex Racing',  pts:0,  fl:false, pole:false, note:'DNS'},
   ],
-  '9-f1': [
+  '09-f1': [
     {pos:1,  name:'Nick',         team:'Scuderia Ferrari',               pts:25, fl:false, pole:false, note:'Leader'},
     {pos:2,  name:'Ageftyg2',     team:'Scuderia Ferrari',               pts:18, fl:false, pole:false, note:''},
     {pos:3,  name:'Sly',          team:'Sahara Force India F1 Team',     pts:15, fl:false, pole:false, note:''},
@@ -3322,35 +3245,66 @@ const RESULTS = {
     {pos:16, name:'Lewis',         team:'Vanguard Sabre Motorsport',      pts:0,  fl:false, pole:false, note:'DNF'},
     {pos:17, name:'Amin',          team:'Renault Sport Formula 1 Team',   pts:0,  fl:false, pole:false, note:'DSQ'},
   ],
-  '11-f2': [
-    {pos:1,  name:'Juantoes',    team:'Carti Racing Association',     pts:28, fl:true,  pole:true,  note:'Leader'},
-    {pos:2,  name:'Skirmis',     team:'LM Performance F2',            pts:18, fl:false, pole:false, note:'+4.033'},
-    {pos:3,  name:'Peters',      team:'LM Performance F2',            pts:15, fl:false, pole:false, note:'+15.116'},
-    {pos:4,  name:'Crocs',       team:'Carti Racing Association',     pts:12, fl:false, pole:false, note:'12'},
-    {pos:5,  name:'EXO_Kyo',     team:'Aero Apex Racing F2',           pts:10, fl:false, pole:false, note:'+16.418'},
-    {pos:6,  name:'Alien',       team:'Nissan Nissmo',                pts:8,  fl:false, pole:false, note:'+33.432'},
-    {pos:7,  name:'Gamrin',      team:'Renault Sport Formula 2 Team', pts:6,  fl:false, pole:false, note:'+44.356'},
-    {pos:8,  name:'Gui',         team:'Renault Sport Formula 2 Team', pts:4,  fl:false, pole:false, note:'+57.181'},
-    {pos:9,  name:'Nahim',       team:'Vanguard Sabre Racing',         pts:2,  fl:false, pole:false, note:'+1 Lap'},
-    {pos:10, name:'Zaphira',     team:'Nissan Nissmo',                pts:1,  fl:false, pole:false, note:'+1 Lap'},
-    {pos:11, name:'Maldonado',   team:"Tarigy's Motorsport Team F2",   pts:0,  fl:false, pole:false, note:'+2 Laps'},
-    {pos:12, name:'idk and idc', team:'',                             pts:0,  fl:false, pole:false, note:'Not Classified'},
+    '11-f1': [
+    {pos:1,  name:'Nick',          team:'Scuderia Ferrari',               pts:26, fl:true,  pole:false, note:'Leader'},
+    {pos:2,  name:'Jamie',         team:'Richard Mille LM Motorsport F1', pts:18, fl:false, pole:true, note:'+16.799'},
+    {pos:3,  name:'GreenShinobi',           team:'Renault Sports Formula 1 Team',     pts:15, fl:false, pole:false, note:'+28.000'},
+    {pos:4,  name:'Lory',  team:'Richard Mille LM Motorsport F1',                   pts:12, fl:false, pole:false, note:'+47.914'},
+    {pos:5,  name:'gkf',   team:'Vodafone McLaren',               pts:10, fl:false, pole:false, note:'+63.014'},
+    {pos:6,  name:'Karazu Arin',          team:'Aero Apex Racing', pts:8,  fl:false, pole:false, note:'+75.315 (20s Penalty)'},
+    {pos:7,  name:'Yokesecapo',          team:'GlitchGP F1 Team',                   pts:6,  fl:false, pole:false, note:'+1 Lap'},
+    {pos:8,  name:'Unironically',          team:'Mercedes-AMG',      pts:4,  fl:false, pole:false, note:'+1 Lap'},
+    {pos:9,  name:'Ageftyg2',         team:'Scuderia Ferrari',               pts:2,  fl:false, pole:false, note:'+1 Lap'},
+    {pos:10, name:'Theo',           team:'Vodafone McLaren',     pts:1,  fl:false, pole:false, note:'+1 Lap'},
+    {pos:11, name:'Vein Blong',  team:'Sahara Force India F1 Team',   pts:0,  fl:false, pole:false, note:'+2 Laps'},
+    {pos:12, name:'Bence',      team:'Glitch GP F1 Team',               pts:0,  fl:false, pole:false, note:'+2 Laps'},
+    {pos:13, name:'Waffle',    team:'Vanguard Sabre Motorsports',               pts:0,  fl:false, pole:false, note:'+2 Laps'},
+    {pos:14, name:'Sly',  team:'Sahara Force India F1 Team',   pts:0,  fl:false, pole:false, note:'DNF'},
+    {pos:15, name:'Joshua',  team:'Aero Apex Racing',   pts:0,  fl:false, pole:false, note:'DNF'},
+    {pos:16, name:'Nath',  team:'Mercedes-AMG',   pts:0,  fl:false, pole:false, note:'DNF (Ragequit cuz of CC Slowdown)'},
+    {pos:17, name:'Rats',  team:'Red Bull Racing F1 Team',   pts:0,  fl:false, pole:false, note:'DNF'},
   ],
-  '13-end-hyper': [
-    {pos:1, name:'HRC Acura',              team:'HRC Acura',              pts:20, fl:false, pole:false, note:'Replaced Vanderhall'},
-    {pos:2, name:'Ferrari LMDH Team',      team:'Ferrari LMDH Team',      pts:17, fl:false, pole:false, note:''},
+  '02-f2': [
+    {pos:1, name:'Gamrin',   team:'LM Performance F2', pts:23, fl:false, pole:true,  note:''},
+    {pos:2, name:'Skirmis',  team:'LM Performance F2', pts:18, fl:false, pole:false, note:''},
+    {pos:3, name:'Style',    team:'Renault Sport Formula 1 Team',              pts:16, fl:false, pole:false, note:''},
+    {pos:4, name:'Crocs',    team:'Acura Team Penske',                pts:14, fl:false, pole:false, note:''},
+    {pos:5, name:'Igorexe',  team:'Acura Team Penske',                pts:12, fl:false, pole:false, note:''},
+    {pos:6, name:'Gasly',    team:'AF Corsa',                         pts:10, fl:false, pole:false, note:''},
+    {pos:7, name:'Nahim',    team:'Renault Sport Formula 1 Team',              pts:8,  fl:false, pole:false, note:''},
+    {pos:8, name:'Batman',   team:'Night Reapers X',                  pts:0,  fl:false, pole:false, note:'DNF'},
+    {pos:9,name:'Alistair', team:'Campos Racing F2',               pts:0,  fl:false, pole:false, note:'DNF'},
   ],
-  '13-end-lmp2': [
-    {pos:1, name:'Aero Apex Racing',                       team:'Aero Apex Racing',                       pts:20, fl:false, pole:false, note:''},
-    {pos:2, name:'McLaren Racing Motorsports LMP2',      team:'McLaren Racing Motorsports LMP2',      pts:17, fl:false, pole:false, note:''},
-    {pos:3, name:'GTES league Racing LMP2 TEAM',          team:'GTES league Racing LMP2 TEAM',          pts:15, fl:false, pole:false, note:'Rebrand of FRGT League Racing'},
+  '03-f2': [
+    {pos:1, name:'Skirmis',  team:'LM Performance F2',  pts:20, fl:false, pole:true,  note:'Leader'},
+    {pos:2, name:'Gamrin',   team:'LM Performance F2',  pts:18, fl:false, pole:false, note:''},
+    {pos:3, name:'Neon',     team:'Renault Sport Formula 1 Team',pts:16, fl:false, pole:false, note:''},
+    {pos:4, name:'Batman',   team:'Night Reapers X',   pts:15, fl:true,  pole:false, note:'Fastest Lap'},
+    {pos:5, name:'Crocs',    team:'Acura Team Penske', pts:12, fl:false, pole:false, note:''},
   ],
-  '13-end-gt3': [
-    {pos:1, name:'GTES League Racing',          team:'GTES League Racing',          pts:20, fl:false, pole:false, note:'Rebrand of Porsche FRGT League Racing'},
-    {pos:2, name:'Corvette Sabre LMGT3 Team',   team:'Corvette Sabre LMGT3 Team',   pts:17, fl:false, pole:false, note:''},
-    {pos:3, name:'Mercedes LMGT3 Team',         team:'Mercedes LMGT3 Team',         pts:15, fl:false, pole:false, note:''},
+  '04-f2': [
+    {pos:1, name:'Gamrin',   team:'LM Performance F2',   pts:22, fl:false, pole:true,  gap:'', note:''},
+    {pos:2, name:'Skirmis',  team:'LM Performance F2',   pts:19, fl:false, pole:false, gap:'', note:''},
+    {pos:3, name:'neon',     team:'Renault Sport Formula 1 Team', pts:16, fl:false, pole:false, gap:'', note:''},
+    {pos:4, name:'Jandosak', team:'Carti Racing Association', pts:14, fl:false, pole:false, gap:'', note:''},
+    {pos:5, name:'Ash',      team:'Aero Apex Racing F2', pts:12, fl:false, pole:false, gap:'', note:''},
+    {pos:6, name:'ZAYN',     team:'AF Corsa',            pts:10, fl:false, pole:false, gap:'', note:''},
+    {pos:7, name:'Nahim',    team:'Renault Sport Formula 1 Team', pts:0,  fl:false, pole:false, gap:'', note:''},
+    {pos:8, name:'Alistair', team:'Campos Racing F2',  pts:0,  fl:false, pole:false, gap:'', note:''},
+    {pos:9, name:'Batman',   team:'Night Reapers X',     pts:0,  fl:false, pole:false, gap:'', note:''},
   ],
-  '9-f2': [
+  '06-f2': [
+    {pos:1, name:'Gamrin',       team:'Renault Sport Formula 2 Team', pts:25, fl:false, pole:false, note:'10s Pen'},
+    {pos:2, name:'Crocs',        team:'Carti Racing Association',     pts:20, fl:true,  pole:false, note:'+1.616'},
+    {pos:3, name:'Peters',       team:'LM Performance F2',            pts:15, fl:false, pole:false, note:'+16.265'},
+    {pos:4, name:'Maldonado',    team:"Tarigy's Motorsport Team F2",   pts:12, fl:false, pole:false, note:'5s Pen'},
+    {pos:5, name:'Alien',        team:'Nissan Nissmo',                pts:11, fl:false, pole:false, note:'5s Pen · +1 Lap'},
+    {pos:6, name:'Zaphira',      team:'Nissan Nissmo',                pts:8,  fl:false, pole:false, note:'+1 Lap'},
+    {pos:7, name:'unknown-user', team:'',                             pts:0,  fl:false, pole:false, note:'DNF'},
+    {pos:8, name:'Skirmis',      team:'LM Performance F2',            pts:0,  fl:false, pole:false, note:'DNF'},
+    {pos:9, name:'AObro13',      team:'Carti Racing Association',     pts:0,  fl:false, pole:false, note:'DNS'},
+  ],
+  '09-f2': [
     {pos:1, name:'Juantoes',     team:'Carti Racing Association',     pts:27, fl:true,  pole:false, note:'Leader'},
     {pos:2, name:'Skirmis',      team:'LM Performance F2',            pts:18, fl:false, pole:false, note:'+4.433'},
     {pos:3, name:'Crocs',        team:'Carti Racing Association',     pts:15, fl:false, pole:false, note:'+7.752'},
@@ -3365,6 +3319,127 @@ const RESULTS = {
     {pos:12,name:'IndyTogetsu',  team:'OKX HP Crimson GP',             pts:0,  fl:false, pole:false, note:'DNF'},
     {pos:13,name:'Santos',       team:'Racing Point F2',               pts:0,  fl:false, pole:false, note:'DNF'},
     {pos:14,name:'Fandrs',       team:'PREMA Fast Line Racing',        pts:0,  fl:false, pole:false, note:'DNF'},
+  ],
+  '11-f2': [
+    {pos:1,  name:'Juantoes',    team:'Carti Racing Association',     pts:28, fl:true,  pole:true,  note:'Leader'},
+    {pos:2,  name:'Skirmis',     team:'LM Performance F2',            pts:18, fl:false, pole:false, note:'+4.033'},
+    {pos:3,  name:'Peters',      team:'LM Performance F2',            pts:15, fl:false, pole:false, note:'+15.116'},
+    {pos:4,  name:'Crocs',       team:'Carti Racing Association',     pts:12, fl:false, pole:false, note:'12'},
+    {pos:5,  name:'EXO_Kyo',     team:'Aero Apex Racing F2',           pts:10, fl:false, pole:false, note:'+16.418'},
+    {pos:6,  name:'Alien',       team:'Nissan Nissmo',                pts:8,  fl:false, pole:false, note:'+33.432'},
+    {pos:7,  name:'Gamrin',      team:'Renault Sport Formula 2 Team', pts:6,  fl:false, pole:false, note:'+44.356'},
+    {pos:8,  name:'Gui',         team:'Renault Sport Formula 2 Team', pts:4,  fl:false, pole:false, note:'+57.181'},
+    {pos:9,  name:'Nahim',       team:'Vanguard Sabre Racing',         pts:2,  fl:false, pole:false, note:'+1 Lap'},
+    {pos:10, name:'Zaphira',     team:'Nissan Nissmo',                pts:1,  fl:false, pole:false, note:'+1 Lap'},
+    {pos:11, name:'Maldonado',   team:"Tarigy's Motorsport Team F2",   pts:0,  fl:false, pole:false, note:'+2 Laps'},
+    {pos:12, name:'idk and idc', team:'',                             pts:0,  fl:false, pole:false, note:'Not Classified'},
+  ],
+  '02-f3': [
+    {pos:1, name:'PradX',      team:'LMP',                            pts:21, fl:false, pole:true,  note:''},
+    {pos:2, name:'Ukizi',      team:'LMP',                            pts:18, fl:false, pole:false, note:''},
+    {pos:3, name:'Piko',       team:'LMP',                            pts:16, fl:false, pole:false, note:''},
+    {pos:4, name:'Peters',     team:"Tarigy's Motorsport Team",       pts:14, fl:false, pole:false, note:''},
+    {pos:5, name:'Bartos',     team:'Aero Apex Racing F3',            pts:14, fl:true,  pole:false, note:''},
+    {pos:6, name:'YellowR1ce', team:'Renault Sport Formula 1 Team F3',         pts:10, fl:false, pole:false, note:''},
+    {pos:7, name:'Swixks',     team:'Carti Racing Association F3',    pts:8,  fl:false, pole:false, note:''},
+    {pos:8, name:'Fabián',     team:'Renault Sport Formula 1 Team F3',         pts:6,  fl:false, pole:false, note:''},
+    {pos:9, name:'Chonki',     team:'Renault Sport Formula 1 Team F3',         pts:4,  fl:false, pole:false, note:''},
+  ],
+  '03-f3': [
+    {pos:1, name:'Piko',    team:'LMP',                            pts:20, fl:false, pole:false, note:''},
+    {pos:2, name:'DOA',     team:"Tarigy's Motorsport Team",       pts:18, fl:false, pole:false, note:''},
+    {pos:3, name:'Fabián',  team:'Renault Sport Formula 1 Team F3',         pts:16, fl:false, pole:false, note:''},
+    {pos:4, name:'Peters',  team:"Tarigy's Motorsport Team",       pts:15, fl:true,  pole:false, note:''},
+    {pos:5, name:'PradX',   team:'LMP',                            pts:12, fl:false, pole:false, note:''},
+    {pos:6, name:'Chonki',  team:'Renault Sport Formula 1 Team F3',         pts:10, fl:false, pole:false, note:''},
+    {pos:7, name:'Ukizi',   team:'LMP',                            pts:8,  fl:false, pole:false, note:'LMP driver'},
+  ],
+  '09-f3': [
+    {pos:1, name:'Jeffz',       team:'LM Performance F3',                    pts:27, fl:true,  pole:false, gap:'Leader',      note:''},
+    {pos:2, name:'Piko',        team:'LM Performance F3',                    pts:19, fl:false, pole:true,  gap:'+0.132',      note:''},
+    {pos:3, name:'Fabián',      team:"Tarigy's Motorsport Team F3",         pts:15, fl:false, pole:false, gap:'+8.115',      note:''},
+    {pos:4, name:'Dark Shadow', team:'Pola Sabre Motorsports',                pts:12, fl:false, pole:false, gap:'+10.994',     note:'6s Penalty'},
+    {pos:5, name:'Piti',        team:'Anonymous Juniors',                    pts:10, fl:false, pole:false, gap:'+12.119',     note:''},
+    {pos:6, name:'ellie',       team:'Kogun Technologies F3 Team',           pts:8,  fl:false, pole:false, gap:'+12.743',     note:'5s Penalty'},
+    {pos:7, name:'Jardin',      team:'LM Performance F3',                    pts:6,  fl:false, pole:false, gap:'+17.265',     note:'11s Penalty'},
+    {pos:8, name:'Bartos',      team:'Pola Sabre Motorsports',                pts:4,  fl:false, pole:false, gap:'+17.750',     note:'10s Penalty'},
+    {pos:9, name:'LJS',         team:'Anonymous Juniors',                    pts:2,  fl:false, pole:false, gap:'+28.280s',    note:''},
+    {pos:10,name:'Jimmy',       team:'Pola Sabre Motorsports',                pts:0,  fl:false, pole:false, gap:'DNF',         note:'DNF'},
+    {pos:11,name:'Maslo',       team:'Aston Martin Racing F3',                pts:0,  fl:false, pole:false, gap:'DNF',         note:'DNF'},
+    {pos:12,name:'Tta',         team:'Aston Martin Racing F3',                pts:0,  fl:false, pole:false, gap:'DNF',         note:'DNF'},
+    {pos:13,name:'Mikey',       team:'Aston Martin Racing F3',                pts:0,  fl:false, pole:false, gap:'DNF',         note:'DNF'},
+    {pos:14,name:'Fred',        team:'GlitchGP F3',                           pts:0,  fl:false, pole:false, gap:'DNF',         note:'DNF'},
+    {pos:15,name:'SilentZ',     team:'',                                      pts:0,  fl:false, pole:false, gap:'DNS',         note:'DNS'},
+    {pos:16,name:'Halo',        team:'Anonymous Juniors',                    pts:0,  fl:false, pole:false, gap:'DNS',         note:'DNS'},
+  ],
+  '10-f3': [
+    {pos:1, name:'Piko',        team:'LM Performance F3',                    pts:28, fl:true,  pole:true,  gap:'Leader',      note:''},
+    {pos:2, name:'Ukkiett',     team:'Carti Racing Association F3',          pts:18, fl:false, pole:false, gap:'+7.410',      note:''},
+    {pos:3, name:'Bartos',      team:'Pola Sabre Motorsports',                pts:15, fl:false, pole:false, gap:'+8.333',      note:''},
+    {pos:4, name:'Dark Shadow', team:'Pola Sabre Motorsports',                pts:12, fl:false, pole:false, gap:'+8.483',      note:''},
+    {pos:5, name:'Lancelot',    team:"Tarigy's Motorsport Team F3",         pts:10, fl:false, pole:false, gap:'+14.091',     note:''},
+    {pos:6, name:'Kriekel',     team:'LM Performance F3',                    pts:8,  fl:false, pole:false, gap:'+30.106',     note:''},
+    {pos:7, name:'Fabián',      team:"Tarigy's Motorsport Team F3",         pts:6,  fl:false, pole:false, gap:'+30.508',     note:''},
+    {pos:8, name:'Rice',        team:'Renault Sport Formula 3 Team',         pts:4,  fl:false, pole:false, gap:'+46.782',     note:'5s Pen'},
+    {pos:9, name:'syxe',        team:'GlitchGP F3',                           pts:2,  fl:false, pole:false, gap:'+1 Lap',      note:'5s Pen'},
+    {pos:10,name:'LJS',         team:'Anonymous Juniors',                    pts:1,  fl:false, pole:false, gap:'+1 Lap',      note:''},
+    {pos:11,name:'Jardin',      team:'LM Performance F3',                    pts:0,  fl:false, pole:false, gap:'DNF',         note:'DNF'},
+    {pos:12,name:'Maslo',       team:'Aston Martin Racing F3',                pts:0,  fl:false, pole:false, gap:'DNF',         note:'DNF'},
+    {pos:13,name:'Piti',        team:'Anonymous Juniors',                    pts:0,  fl:false, pole:false, gap:'DNF',         note:'DNF'},
+    {pos:14,name:'El_Manco010', team:"Tarigy's Motorsport Team F3",         pts:0,  fl:false, pole:false, gap:'DNF',         note:'DNF'},
+    {pos:15,name:'Spring',      team:'',                                      pts:0,  fl:false, pole:false, gap:'DNF',         note:'DNF'},
+    {pos:16,name:'Boby',        team:'Fast Line Motorsport F3 Team',          pts:0,  fl:false, pole:false, gap:'DNF',         note:'DNF'},
+    {pos:17,name:'Mikey',       team:'Aston Martin Racing F3',                pts:0,  fl:false, pole:false, gap:'DNF',         note:'DNF'},
+    {pos:18,name:'Elden',       team:'Aero Apex Racing F3',                   pts:0,  fl:false, pole:false, gap:'DNF',         note:'DNF'},
+    {pos:19,name:'FTL',         team:'Renault Sport Formula 3 Team',         pts:0,  fl:false, pole:false, gap:'DSQ',         note:'DSQ'},
+    {pos:20,name:'OSHIO',       team:'',                                      pts:0,  fl:false, pole:false, gap:'DSQ',         note:'DSQ'},
+  ],
+  '11-f3': [
+    {pos:1, name:'Jeffz',       team:'LM Performance F3',                    pts:28, fl:true,  pole:true,  gap:'Leader',      note:''},
+    {pos:2, name:'Bartos',      team:'Pola Sabre Motorsports',                pts:18, fl:false, pole:false, gap:'+7.083',      note:''},
+    {pos:3, name:'Ukkiett',     team:'Carti Racing Association F3',          pts:15, fl:false, pole:false, gap:'+10.516',     note:''},
+    {pos:4, name:'Lancelot',    team:"Tarigy's Motorsport Team F3",         pts:12, fl:false, pole:false, gap:'+10.702',     note:''},
+    {pos:5, name:'Piko',        team:'LM Performance F3',                    pts:10, fl:false, pole:false, gap:'+11.367',     note:''},
+    {pos:6, name:'SCKIBLES',    team:'GlitchGP F3',                           pts:8,  fl:false, pole:false, gap:'+15.400',     note:''},
+    {pos:7, name:'Fabián',      team:"Tarigy's Motorsport Team F3",         pts:6,  fl:false, pole:false, gap:'+20.832',     note:''},
+    {pos:8, name:'Jardin',      team:'LM Performance F3',                    pts:4,  fl:false, pole:false, gap:'+29.048',     note:''},
+    {pos:9, name:'Rice',        team:'Renault Sport Formula 3 Team',         pts:2,  fl:false, pole:false, gap:'+37.632',     note:'10s Pen'},
+    {pos:10,name:'Avdla',       team:'Kogun Technologies F3 Team',           pts:0,  fl:false, pole:false, gap:'DNF',         note:'DNF'},
+    {pos:11,name:'Maslo',       team:'Aston Martin Racing F3',                pts:0,  fl:false, pole:false, gap:'DNF',         note:'DNF'},
+    {pos:12,name:'GASLY',       team:'GlitchGP F3',                           pts:0,  fl:false, pole:false, gap:'DNF',         note:'DNF'},
+    {pos:13,name:'syxe',        team:'GlitchGP F3',                           pts:0,  fl:false, pole:false, gap:'DNF',         note:'DNF'},
+    {pos:14,name:'Mikey',       team:'Aston Martin Racing F3',                pts:0,  fl:false, pole:false, gap:'DNF',         note:'DNF'},
+    {pos:15,name:'Piti',        team:'Anonymous Juniors',                    pts:0,  fl:false, pole:false, gap:'DNF',         note:'DNF'},
+    {pos:16,name:'Elf',         team:'Pola Sabre Motorsports',                pts:0,  fl:false, pole:false, gap:'DNF',         note:'DNF'},
+  ],
+  '0-f1-quali': ['Nick','Lory','Douzy','theo','Ageftyg2','Joshua','Dovantae','Nath','Vitality','Zemmer','Elijah','Michael','Juan','Lewis','Alex','Lightening'],
+  '5-end-hyper': [
+    {pos:1, name:'Cadillac', team:'Cadillac', pts:20, fl:false, pole:false, note:''},
+    {pos:2, name:'Alpine',   team:'Alpine',   pts:17, fl:false, pole:false, note:''},
+  ],
+  '5-end-lmp2': [
+    {pos:1, name:'Richard Mille LM Performance', team:'Richard Mille LM Performance', pts:20, fl:false, pole:false, note:''},
+    {pos:2, name:'McLaren LMP2',                 team:'McLaren LMP2',                 pts:17, fl:false, pole:false, note:''},
+    {pos:3, name:'Aero Apex Racing',             team:'Aero Apex Racing',             pts:15, fl:false, pole:false, note:''},
+  ],
+  '5-end-gt3': [
+    {pos:1, name:'Ford',   team:'Ford',   pts:20, fl:false, pole:false, note:''},
+    {pos:2, name:'Pacific Umamusume BMW', team:'Pacific Umamusume BMW', pts:17, fl:false, pole:false, note:''},
+    {pos:3, name:'Nissan', team:'Nissan', pts:15, fl:false, pole:false, note:''},
+  ],
+  '13-end-hyper': [
+    {pos:1, name:'HRC Acura',              team:'HRC Acura',              pts:20, fl:false, pole:false, note:'Replaced Vanderhall'},
+    {pos:2, name:'Ferrari LMDH Team',      team:'Ferrari LMDH Team',      pts:17, fl:false, pole:false, note:''},
+  ],
+  '13-end-lmp2': [
+    {pos:1, name:'Aero Apex Racing',                       team:'Aero Apex Racing',                       pts:20, fl:false, pole:false, note:''},
+    {pos:2, name:'McLaren Racing Motorsports LMP2',      team:'McLaren Racing Motorsports LMP2',      pts:17, fl:false, pole:false, note:''},
+    {pos:3, name:'GTES league Racing LMP2 TEAM',          team:'GTES league Racing LMP2 TEAM',          pts:15, fl:false, pole:false, note:'Rebrand of FRGT League Racing'},
+  ],
+  '13-end-gt3': [
+    {pos:1, name:'GTES League Racing',          team:'GTES League Racing',          pts:20, fl:false, pole:false, note:'Rebrand of Porsche FRGT League Racing'},
+    {pos:2, name:'Corvette Sabre LMGT3 Team',   team:'Corvette Sabre LMGT3 Team',   pts:17, fl:false, pole:false, note:''},
+    {pos:3, name:'Mercedes LMGT3 Team',         team:'Mercedes LMGT3 Team',         pts:15, fl:false, pole:false, note:''},
   ],
   '9-end-hyper': [
     {pos:1, name:'BMW FRGT LEAGUE Racing LMDH Team', team:'BMW FRGT LEAGUE Racing LMDH Team', pts:20, fl:false, pole:false, note:'Renamed from BMW'},
@@ -3396,18 +3471,8 @@ const RESULTS = {
   ],
 };
 
-/* Qualifying results — separate from race RESULTS above. Keyed the same way: `${raceIdx}-${series}` or `${raceIdx}-${series}-${class}`. */
-/* Correct calendar-array indexes for F1/F2 Round 09/10/11.
-   RACES includes Endurance rounds and the season-break entry, so the
-   calendar array indexes are Monaco=16, Russian=18, Qatar=20. */
-Object.assign(RESULTS, {
-  '16-f2': RESULTS['9-f2'],
-  '18-f2': RESULTS['10-f2'],
-  '20-f2': RESULTS['11-f2'],
-  '16-f1': RESULTS['9-f1'],
-  '18-f1': RESULTS['10-f1'],
-  '20-f1': RESULTS['11-f1']
-});
+/* Qualifying results are kept separately below.
+   Race RESULTS now use canonical round keys: 01-f1, 01-f2, 01-f3, etc. */
 
 const QUALI_RESULTS = {
   '5-end-hyper': [
@@ -4699,8 +4764,8 @@ function renderRaceResults(raceIdx, series, endClass){
   setTimeout(()=>paintRaceResults(raceIdx, series, endClass), 140);
 }
 function paintRaceResults(raceIdx, series, endClass){
-  const key = endClass ? raceIdx+'-'+series+'-'+endClass : raceIdx+'-'+series;
-  const data = RESULTS[key] || RESULTS[raceIdx+'-'+series] || [];
+  const key = resultRoundKey(raceIdx, series, endClass);
+  const data = RESULTS[key] || [];
   const wrap = document.getElementById('rd-results-wrap');
 
   const copyBtn = `<button class="copy-png-btn" id="copy-results-btn" onclick="copyResultsPng()" style="margin-left:auto;">⬇️ Download PNG</button>`;
@@ -4867,9 +4932,11 @@ function onResDriverPick(){
 }
 
 function getResultKey(){
-  return currentRaceSeries==='end'
-    ? currentRaceIdx+'-'+currentRaceSeries+'-'+currentEndClass
-    : currentRaceIdx+'-'+currentRaceSeries;
+  return resultRoundKey(
+    currentRaceIdx,
+    currentRaceSeries,
+    currentRaceSeries==='end' ? currentEndClass : null
+  );
 }
 
 function openAddResult(){
@@ -5086,7 +5153,7 @@ function renderCalendar(filter){
       // Podium — top 3 finishers for completed rounds (no photos, just position + name)
       let sideHtml = `<div class="rc-status-tag ${statusCls}">${statusTxt}</div>`;
       if(r.status==='done'){
-        const results = (RESULTS[`${idx}-${s}`] || []).slice().sort((a,b)=>a.pos-b.pos).slice(0,3);
+        const results = getResultsFor(idx, s).slice().sort((a,b)=>a.pos-b.pos).slice(0,3);
         if(results.length){
           sideHtml = `<div class="rc-podium">${results.map(res=>`
             <div class="rc-podium-item">
@@ -7566,9 +7633,14 @@ function primarySeriesFor(race){
   if(!race || !race.series || !race.series.length) return 'f1';
   return race.series.includes('f1') ? 'f1' : race.series[0];
 }
+function resultRoundKey(idx, series, endClass){
+  const race = RACES[idx];
+  const round = race && race.rnd ? race.rnd : String(idx).padStart(2,'0');
+  return endClass ? `${round}-${series}-${endClass}` : `${round}-${series}`;
+}
 function getResultsFor(idx, series, endClass){
-  const key = endClass ? `${idx}-${series}-${endClass}` : `${idx}-${series}`;
-  return RESULTS[key] || RESULTS[`${idx}-${series}`] || [];
+  const key = resultRoundKey(idx, series, endClass);
+  return RESULTS[key] || [];
 }
 function getPodiumFor(idx, series){
   let results = getResultsFor(idx, series);
