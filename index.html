@@ -2189,4 +2189,39 @@ function renderRecords(){
 })();
 
 </script>
+
+<style id="vms-title-pulse-style">
+#vms-tool-dock{position:fixed;right:18px;bottom:18px;z-index:1000;font-family:Arial,Helvetica,sans-serif}
+#vms-tool-dock button{border:1px solid #e8186d;background:#e8186d;color:#fff;padding:13px 16px;font-size:10px;font-weight:900;letter-spacing:1px;cursor:pointer;box-shadow:0 8px 24px #0009;transition:transform .15s,filter .15s}
+#vms-tool-dock button:hover{transform:translateY(-2px);filter:brightness(1.12)}
+.vms-modal{position:fixed;inset:0;z-index:1100;background:#000b;display:none;align-items:center;justify-content:center;padding:18px;font-family:Arial,Helvetica,sans-serif}
+.vms-modal.open{display:flex}.vms-panel{width:min(560px,100%);max-height:88vh;overflow:auto;background:#0c0c0e;color:#f5f5f5;border:1px solid #383838;border-top:3px solid #e8186d;box-shadow:0 20px 70px #000d;padding:22px}
+.vms-panel-head{display:flex;align-items:flex-start;justify-content:space-between;gap:15px;margin-bottom:18px}.vms-eyebrow{font-size:9px;font-weight:900;letter-spacing:2px;color:#e8186d;text-transform:uppercase}.vms-panel h2{font-size:25px;line-height:1.1;font-style:italic;text-transform:uppercase;margin:6px 0 0}.vms-close{background:#171719;color:#fff;border:1px solid #383838;width:34px;height:34px;font-size:20px;cursor:pointer;flex:none}
+.vms-leader-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.vms-leader{background:#171719;border:1px solid #2e2e32;padding:13px;min-width:0}.vms-series{font-size:9px;letter-spacing:1px;color:#e8186d;font-weight:900}.vms-leader-name{font-size:16px;font-weight:900;margin-top:9px;overflow-wrap:anywhere}.vms-leader-pts{font-size:23px;font-weight:900;margin-top:3px}.vms-gap{font-size:11px;color:#aaa;margin-top:5px}.vms-note{font-size:11px;color:#999;line-height:1.5;margin-top:15px}
+@media(max-width:520px){#vms-tool-dock{right:8px;bottom:8px}.vms-panel{padding:16px}.vms-leader-grid{grid-template-columns:1fr}.vms-leader{display:grid;grid-template-columns:1fr auto;align-items:center;gap:4px 10px}.vms-series{grid-column:1/-1}.vms-leader-name{margin-top:3px}.vms-leader-pts{grid-column:2;grid-row:2}.vms-gap{grid-column:1/-1}}
+</style>
+<div id="vms-tool-dock" aria-label="VMS tools"><button type="button" id="vms-open-pulse">◈ TITLE PULSE</button></div>
+<div class="vms-modal" id="vms-pulse-modal" role="dialog" aria-modal="true" aria-labelledby="vms-pulse-title">
+  <div class="vms-panel"><div class="vms-panel-head"><div><div class="vms-eyebrow">VMS // Championship Monitor</div><h2 id="vms-pulse-title">Title Pulse</h2></div><button class="vms-close" data-vms-close aria-label="Close">×</button></div>
+    <div class="vms-leader-grid" id="vms-pulse-grid"></div><div class="vms-note">Championship leaders and their points gaps, calculated from the standings currently built into this page.</div>
+  </div>
+</div>
+<script id="vms-title-pulse-script">
+(function(){
+  const byId=id=>document.getElementById(id), modal=byId('vms-pulse-modal');
+  function closePulse(){modal.classList.remove('open');}
+  function label(s){return ({f1:'VMS F1',f2:'VMS F2',f3:'VMS F3'})[s]||s.toUpperCase();}
+  function renderPulse(){
+    byId('vms-pulse-grid').innerHTML=['f1','f2','f3'].map(s=>{
+      const ds=((D.standings[s]||{}).drivers||[]).filter(d=>d.name&&d.name!=='—').slice().sort((a,b)=>(+b.pts||0)-(+a.pts||0));
+      const leader=ds[0], second=ds[1], gap=leader&&second?Math.max(0,(+leader.pts||0)-(+second.pts||0)):0;
+      return `<div class="vms-leader"><div class="vms-series">${label(s)} · P1</div><div class="vms-leader-name">${leader?esc(leader.name):'TBD'}</div><div class="vms-leader-pts">${leader?(+leader.pts||0):0}<span style="font-size:10px;color:#aaa"> PTS</span></div><div class="vms-gap">${second?gap+' point'+(gap===1?'':'s')+' ahead of '+esc(second.name):'No second-place data'}</div></div>`;
+    }).join('');
+  }
+  byId('vms-open-pulse').addEventListener('click',()=>{renderPulse();modal.classList.add('open');});
+  document.querySelectorAll('#vms-pulse-modal [data-vms-close]').forEach(b=>b.addEventListener('click',closePulse));
+  modal.addEventListener('click',e=>{if(e.target===modal)closePulse();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closePulse();});
+})();
+</script>
 </body></html>
